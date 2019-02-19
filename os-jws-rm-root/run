@@ -1,6 +1,0 @@
-#!/bin/sh
-set -u
-set -e
-
-# remove default ROOT webapps (CLOUD-28)
-rm -rf $JWS_HOME/webapps/ROOT
