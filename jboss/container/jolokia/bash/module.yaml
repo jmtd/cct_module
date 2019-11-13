@@ -6,16 +6,10 @@ description: ^
   Provides support for configuring Jolokia.  Basic usage is
   opts="$JBOSS_CONTAINER_JOLOKIA_MODULE/jolokia-opts"
 
-labels:
-- name: io.fabric8.s2i.version.jolokia
-  value: "1.6.2-redhat-00002"
-
-envs:
+envs: # XXX grep for users of JBOSS_CONTAINER_JOLOKIA_MODULE
 - name: JBOSS_CONTAINER_JOLOKIA_MODULE
   value: /opt/jboss/container/jolokia
 # variable overrides/defaults
-- name: JOLOKIA_VERSION
-  value: "1.6.2"
 - name: AB_JOLOKIA_PASSWORD_RANDOM
   value: "true"
 - name: AB_JOLOKIA_AUTH_OPENSHIFT
@@ -28,12 +22,10 @@ ports:
 
 execute:
 - script: configure.sh
-- script: backward_compatibility.sh
 
-artifacts:
-- name: jolokia-jvm
-  target: jolokia-jvm-1.6.2.redhat-00002-agent.jar
-  md5: 760f2fbaf6b142192f3cee2c99bfcbf8
+packages:
+  install:
+    - jolokia-jvm-agent
 
 modules:
   install:
