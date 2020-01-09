@@ -20,3 +20,6 @@ packages:
   install:
   - rh-maven35
 
+modules:
+  install:
+    - name: jboss.container.java.rm-openjdk
