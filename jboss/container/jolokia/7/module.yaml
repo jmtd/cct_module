@@ -64,3 +64,7 @@ artifacts:
 - name: jolokia-jvm
   target: jolokia-jvm-1.6.2.redhat-00002-agent.jar
   md5: 760f2fbaf6b142192f3cee2c99bfcbf8
+
+packages:
+  install:
+    - unzip # used in test

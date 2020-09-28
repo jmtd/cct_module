@@ -63,3 +63,4 @@ execute:
 packages:
   install:
     - jolokia-jvm-agent
+    - unzip # used in test
